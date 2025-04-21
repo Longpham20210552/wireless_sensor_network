@@ -9,3 +9,26 @@ This project implements a wireless sensor network to measure and collect tempera
 **Gateway**_(Gateway folder)_: Managing communication with multiple sensor nodes via RF. Scheduling and collecting temperature/humidity data from nodes. Sending collected data to a web server via HTTP. Receiving configuration commands from the server.
 
 **Sensor Node**_(SensorNode folder)_ : Measuring temperature and humidity using environmental sensors (e.g., DHT22/SHT20). Take the control commands from and sending data to gateway. Supporting LED alerts based on configurable threholds.
+
+## ⚙️ Hardware Used
+
+- ESP32 Wroom 
+- STM32F103C8T6 ("Blue Pill")
+- LoRa modules (SX1278)
+- SHT21 sensors
+- LEDs, battery pack
+
+## 🔁 Data Flow
+
+1. Gateway sends broadcast signal.
+2. Each node sends back its sensor data.
+3. Gateway uploads all data to the server via HTTP.
+4. Server displays or logs the data.
+
+## 📊 Project Achievements
+
+- ✅ Accuracy: < 1°C, Resolution: 0.1°C
+- ✅ 11 nodes support (tested with 4 nodes)
+- ✅ Update interval: <10 seconds
+- ✅ Battery runtime: 8+ hours
+- ✅ Web-based data visualization
